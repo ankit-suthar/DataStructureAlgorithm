@@ -1,0 +1,18 @@
+
+The interfaces can have static methods as well which is similar to static method of classes.
+
+Default methods of interface can be overriden.
+
+Overriding default methods in class is optional, but if there are two interfaces and class is implementing both the interfaces in that case we have to
+override default method and inside overrided method we have to write which method we want to make a call.
+
+Default methods are accessed by using interface reference variable.
+
+Static methods of interface cannot be overriden.
+
+Static methods are accessed by Class reference only. (Interface.Static Method)
+
+The default methods were introduced to provide backward compatibility so that existing intefaces can use the lambda expressions
+without implementing the methods in the implementation class. Default methods are also known as defender methods or virtual extension methods.
+
+Default methods were introduced to provide backward compatibility for old interfaces so that they can have new methods without effecting existing code.

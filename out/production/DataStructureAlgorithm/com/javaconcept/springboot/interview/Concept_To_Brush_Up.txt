@@ -1,0 +1,87 @@
+1. Use of @Autowire
+2. @Component / @Service / @Repository
+3. @RestController
+4. GET/POST/PUT/DELETE/PATCH
+
+Restful API principles:
+
+GET
+
+Browse all devices or configurations [Primary Collection]
+---------------------------------------------------------
+HTTP GET /devices
+HTTP GET /configurations
+
+    apply paging and filtering
+    --------------------------
+    HTTP GET /devices?startIndex=0&size=20
+    HTTP GET /configurations?startIndex=0&size=20
+
+Browse all devices or configurations [Secondary Collection]
+-----------------------------------------------------------
+HTTP GET /devices/{id}/configurations
+
+Browse single device or configuration [Primary Collection]
+----------------------------------------------------------
+HTTP GET /devices/{id}
+HTTP GET /configurations/{id}
+
+Create a device or configuration
+--------------------------------
+HTTP POST /devices  [Post JSON Body]
+HTTP POST /configurations  [Post JSON Body]
+
+Update a device or configuration
+--------------------------------
+HTTP PUT /devices/{id} [PUT Body]
+HTTP PUT /configurations/{id} [PUT Body]
+
+Remove a device or configuration
+--------------------------------
+HTTP DELETE /devices/{id}
+HTTP DELETE /configurations/{id}
+
+Applying or Removing a configuration from a device
+--------------------------------------------------
+//Apply Configuration on a device
+HTTP PUT /devices/{id}/configurations
+
+//Remove Configuration on a device
+HTTP DELETE /devices/{id}/configurations/{id}
+
+
+PUT vs PATCH
+------------
+
+Json = {
+        id:1,
+        name: Ankit,
+        email: abc@xyz.com
+       }
+
+HTTP POST /devices
+------------------
+Json = {
+        id:1,
+        name: Ankit,
+        email: abc@xyz.com
+       }
+
+HTTP PUT /devices/1
+-------------------
+Json = {
+        id:1,
+        name: Ankit,
+        email: hello@xyz.com  // new email address
+       }
+
+HTTP PATCH /devices/1
+---------------------
+Json = {
+        email: abc@xyz.com  // new email address
+       }
+
+----------------------------------
+Response of POST API - POST Object
+Response of PUT API - Updated Object
+Response of GET API - List of Objects

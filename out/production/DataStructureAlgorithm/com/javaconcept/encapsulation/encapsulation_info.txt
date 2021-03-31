@@ -1,0 +1,2 @@
+- Encapsulation in Java is a process of wrapping code and data together into a single unit.
+- The Java Bean class is the example of a fully encapsulated class

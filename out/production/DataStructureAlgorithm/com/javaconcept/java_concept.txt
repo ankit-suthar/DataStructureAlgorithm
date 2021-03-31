@@ -1,0 +1,90 @@
+Four pillars of Object Oriented Programming
+-------------------------------------------
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
+
+
+Java 8 Features
+---------------
+1.  Lambda Expressions
+2.  Functional Interfaces
+3.  Default methods in interfaces
+4.  Static methods in interfaces
+5.  Predicate (Predefined functional interfaces)
+6.  Function (Predefined functional interfaces)
+7.  Consumer (Predefined functional interfaces)
+8.  Supplier (Predefined functional interfaces)
+9.  Method Reference & Constructor reference by double colon (::) operator
+10. Stream API
+11. Date & Time (Joda API)
+
+
+Comparator interface (Java 8)
+-----------------------------
+Signature: Interface Comparator<T>
+
+It contains two methods & many  default, static methods among them are:
+1. public int compare(Object obj1, Object obj2)
+2. public boolean equals(Object obj)
+
+Comparable interface (Java 8)
+-----------------------------
+Signature: Interface Comparable<T>
+It contains one method:
+public int compareTo(T o)
+
+In-built functional interfaces
+------------------------------
+
+1. Predicate
+   ---------
+    public interface Predicate<T> {
+        boolean test(T t);
+    }
+
+2. Function
+   --------
+   public interface Function<T, R> {
+       R apply(T t);
+   }
+
+3. Consumer
+   --------
+   public interface Consumer<T> {
+       void accept(T t);
+   }
+
+4. Supplier
+   --------
+   public interface Supplier<T> {
+       T get();
+   }
+
+
+ReentrantLock
+-------------
+ReentrantLock lock = new ReentrantLock(fair);
+
+- fair -> true - First come first serve base
+       -> false (by default) - Doesn't worry for waiting thread, lock can be acquired by recently thread
+
+lock.lock() - to acquire lock
+lock.unlock() - to release lock
+
+boolean lockAcquired = lock.tryLock() -> to check lock is available, if yes then get, if not don't wait
+
+(tryLock() - doesn't honor fairness)
+
+work around for fairness with trylock
+lock.tryLock(0,TimeUnit.SECONDS)
+
+Methods
+-------
+isHeldByCurrentThread
+getQueueLength - length of wait queue
+newCondition
+
+
+
